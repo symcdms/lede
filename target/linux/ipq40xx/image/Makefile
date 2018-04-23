@@ -189,4 +189,16 @@ define Device/qcom_ap-dk04.1-c1
 endef
 TARGET_DEVICES += qcom_ap-dk04.1-c1
 
+define Device/symc-nc
+	$(call Device/FitImage)
+	DEVICE_DTS := symc-nc
+	DEVICE_TITLE := Symantec Norton Core
+	BOARD_NAME := symc-nc
+	KERNEL_INSTALL := 1
+	KERNEL_SIZE := 4048k
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+endef
+TARGET_DEVICES += symc-nc
+
 $(eval $(call BuildImage))
